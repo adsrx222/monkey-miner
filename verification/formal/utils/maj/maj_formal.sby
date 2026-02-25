@@ -1,0 +1,19 @@
+[tasks]
+bmc
+prove
+
+[options]
+bmc: mode bmc
+prove: mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv maj_formal.sv
+read -formal -sv utils.sv
+prep -top maj_formal
+
+[files]
+maj_formal.sv
+../../../../src/utils.sv

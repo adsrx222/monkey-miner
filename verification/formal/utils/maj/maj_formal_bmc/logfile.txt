@@ -1,0 +1,13 @@
+SBY  0:22:15 [maj_formal_bmc] Removing directory '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/utils/maj/maj_formal_bmc'.
+SBY  0:22:15 [maj_formal_bmc] Copy '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/utils/maj/maj_formal.sv' to '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/utils/maj/maj_formal_bmc/src/maj_formal.sv'.
+SBY  0:22:15 [maj_formal_bmc] Copy '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/utils/maj/../../../../src/utils.sv' to '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/utils/maj/maj_formal_bmc/src/utils.sv'.
+SBY  0:22:15 [maj_formal_bmc] engine_0: smtbmc
+SBY  0:22:15 [maj_formal_bmc] base: starting process "cd maj_formal_bmc/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY  0:22:15 [maj_formal_bmc] base: utils.sv:3: ERROR: syntax error, unexpected '[', expecting ',' or ';' or '='
+SBY  0:22:15 [maj_formal_bmc] base: finished (returncode=1)
+SBY  0:22:15 [maj_formal_bmc] base: task failed. ERROR.
+SBY  0:22:15 [maj_formal_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  0:22:15 [maj_formal_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  0:22:15 [maj_formal_bmc] summary: engine_0 (smtbmc) did not return a status
+SBY  0:22:15 [maj_formal_bmc] summary: engine_0 did not produce any traces
+SBY  0:22:15 [maj_formal_bmc] DONE (ERROR, rc=16)

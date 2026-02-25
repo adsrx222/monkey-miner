@@ -1,0 +1,17 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv sigmaone_formal.sv
+read -formal -sv utils.sv
+prep -top sigmaone_formal
+
+[files]
+sigmaone_formal.sv
+../../../../src/utils.sv

@@ -1,0 +1,17 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv csa_formal.sv
+read -formal -sv utils.sv
+prep -top csa_formal
+
+[files]
+csa_formal.sv
+../../../../src/utils.sv

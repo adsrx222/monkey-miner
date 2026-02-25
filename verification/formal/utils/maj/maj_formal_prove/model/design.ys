@@ -1,0 +1,9 @@
+# running in maj_formal_prove/src/
+read -formal -sv maj_formal.sv
+read -formal -sv utils.sv
+prep -top maj_formal
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

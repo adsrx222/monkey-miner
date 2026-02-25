@@ -1,0 +1,19 @@
+[tasks]
+bmc
+prove
+
+[options]
+bmc: mode bmc
+prove: mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv sumone_formal.sv
+read -formal -sv utils.sv
+prep -top sumone_formal
+
+[files]
+sumone_formal.sv
+../../../../src/utils.sv

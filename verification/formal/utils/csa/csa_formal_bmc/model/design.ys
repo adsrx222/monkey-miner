@@ -1,0 +1,9 @@
+# running in csa_formal_bmc/src/
+read -formal -sv csa_formal.sv
+read -formal -sv utils.sv
+prep -top csa_formal
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

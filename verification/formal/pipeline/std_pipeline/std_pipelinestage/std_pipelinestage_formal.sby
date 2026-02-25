@@ -1,0 +1,18 @@
+[tasks]
+prove
+
+[options]
+prove: mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv std_pipelinestage_formal.sv
+read -formal -sv utils.sv
+prep -top std_pipelinestage_formal
+
+[files]
+std_pipelinestage_formal.sv
+../../../../../src/utils.sv
+../../../../../src/std_pipeline_stage.sv

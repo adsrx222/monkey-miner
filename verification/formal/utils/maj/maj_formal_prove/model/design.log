@@ -1,0 +1,18 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62+9 (git sha1 0640a5904-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: maj_formal.sv
+Parsing formal SystemVerilog input from `maj_formal.sv' to AST representation.
+Storing AST representation for module `$abstract\maj_formal'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: utils.sv
+Parsing formal SystemVerilog input from `utils.sv' to AST representation.
+utils.sv:3: ERROR: syntax error, unexpected '[', expecting ',' or ';' or '='

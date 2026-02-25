@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-02-24T13:15:25" hostname="Adithyas-MacBook-Pro-5.local" package="std_pipelinestage_formal" id="0" name="prove" tests="1" errors="1" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="prove" name="prove" time="0">
+<error type="ERROR"/>
+</testcase>
+<system-out>SBY 13:15:25 [std_pipelinestage_formal_prove] Removing directory '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/std_pipelinestage_formal_prove'.
+SBY 13:15:25 [std_pipelinestage_formal_prove] Copy '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/std_pipelinestage_formal.sv' to '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/std_pipelinestage_formal_prove/src/std_pipelinestage_formal.sv'.
+SBY 13:15:25 [std_pipelinestage_formal_prove] Copy '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/../../../../../src/utils.sv' to '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/std_pipelinestage_formal_prove/src/utils.sv'.
+SBY 13:15:25 [std_pipelinestage_formal_prove] Copy '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/../../../../../src/std_pipeline_stage.sv' to '/Users/adithyasridhar/hdlprojects/ez-btc/verification/formal/pipeline/std_pipeline/std_pipelinestage/std_pipelinestage_formal_prove/src/std_pipeline_stage.sv'.
+SBY 13:15:25 [std_pipelinestage_formal_prove] engine_0: smtbmc
+SBY 13:15:25 [std_pipelinestage_formal_prove] base: starting process &quot;cd std_pipelinestage_formal_prove/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 13:15:25 [std_pipelinestage_formal_prove] base: std_pipelinestage_formal.sv:16: ERROR: Identifier `\input_stage.data' is implicitly declared and `default_nettype is set to none.
+SBY 13:15:25 [std_pipelinestage_formal_prove] base: finished (returncode=1)
+SBY 13:15:25 [std_pipelinestage_formal_prove] base: task failed. ERROR.
+SBY 13:15:25 [std_pipelinestage_formal_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:15:25 [std_pipelinestage_formal_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:15:25 [std_pipelinestage_formal_prove] summary: engine_0 (smtbmc) did not return a status
+SBY 13:15:25 [std_pipelinestage_formal_prove] summary: engine_0 did not produce any traces
+SBY 13:15:25 [std_pipelinestage_formal_prove] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>
