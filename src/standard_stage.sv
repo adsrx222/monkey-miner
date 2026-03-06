@@ -2,8 +2,9 @@
 `default_nettype none
 `timescale 1us / 100 ns
 
-module standard_stage # (parameter bit [31:0] k) (
+module standard_stage (
     input logic [31:0] wi, 
+    input logic [31:0] k,
     pipe_if.in prev_stage, 
     pipe_if.out next_stage
 );
@@ -13,7 +14,7 @@ module standard_stage # (parameter bit [31:0] k) (
     );
         rotr32 = (a >> b) | (a << (32 - b));
     endfunction
-    
+
     function automatic logic [31:0] sum0 (
         input logic [31:0] a
     );
@@ -47,24 +48,26 @@ module standard_stage # (parameter bit [31:0] k) (
     logic [31:0] ch_e, maj_a;
     logic [31:0] t1, t2;
 
-    assign s1   = sum1(prev_stage.data[159:128]);
-    assign s0   = sum0(prev_stage.data[31:0]);
-    assign ch_e = ch(prev_stage.data[159:128], prev_stage.data[191:160], prev_stage.data[223:192]);
-    assign maj_a = maj(prev_stage.data[31:0], prev_stage.data[63:32], prev_stage.data[95:64]);
-
     always_comb begin
+
+        s1   = sum1(prev_stage.data[159:128]);
+        s0   = sum0(prev_stage.data[31:0]);
+        ch_e = ch(prev_stage.data[159:128], prev_stage.data[191:160], prev_stage.data[223:192]);
+        maj_a = maj(prev_stage.data[31:0], prev_stage.data[63:32], prev_stage.data[95:64]);
+
         csa(prev_stage.data[255:224], k, wi, csa0_carry, csa0_sum);
         csa(s1, ch_e, csa0_sum, csa1_carry, csa1_sum);
         csa(csa1_sum, (csa1_carry << 1), (csa0_carry << 1), csa2_carry, csa2_sum);
 
-        assign t1 = csa2_sum + (csa2_carry << 1);
-        assign t2 = s0 + maj_a;
+        t1 = csa2_sum + (csa2_carry << 1);
+        t2 = s0 + maj_a;
+        
     end
 
     always @ (posedge prev_stage.clk or negedge prev_stage.reset_n) begin
         if(~prev_stage.reset_n) begin
 
-            next_stage.data <= '{default:0};
+            next_stage.data <= 0;
             next_stage.valid <= 1'b0;
 
         end else if (prev_stage.valid) begin

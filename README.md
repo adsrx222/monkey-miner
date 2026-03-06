@@ -27,3 +27,7 @@ This project implements a multi-core Bitcoin Miner with UART control.
 ## Status
 
 The RTL is synthesizable with Yosys; SHA-256 cores functionally compute digests, but the design is still being worked on.
+
+**Update 3/5/26:**
+Since Yosys has limited support for interfaces, I need to remove all interface classes and substitute with 
+regular input/output.

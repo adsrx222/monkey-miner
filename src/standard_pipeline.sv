@@ -15,9 +15,8 @@ module standard_pipeline (
     genvar i;
     generate
         for(i = 0; i < 64; i = i + 1) begin
-            standard_stage # (
-                .k(k[((32*(i+1))-1):(32*i)])
-            ) stdstage_i (
+            standard_stage stdstage_i (
+                .k(k[((32*(i+1))-1):(32*i)]),
                 .wi(out_if.message[((32*(i+1))-1):(32*i)]),
                 .prev_stage(bus[i].in),
                 .next_stage(bus[i+1].out)
@@ -28,7 +27,7 @@ module standard_pipeline (
     always_ff @(posedge clk or negedge reset_n) begin
         if(~reset_n) begin
             out_if.done <= 1'b0;
-            out_if.final_digest <= '{default:0};
+            out_if.final_digest <= 0;
         end else begin
             out_if.done <= bus[64].valid;
             out_if.final_digest <= bus[64].data;
